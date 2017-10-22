@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Project Notes</string>
+    <string name="logo">Logo</string>
+    <string name="login_top_img">top img</string>
+    <string name="login_bottom_img">bottom img</string>
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Password</string>
+    <string name="btn_login">Login</string>
+    <string name="btn_cancel">Cancel</string>
+</resources>
