@@ -1,15 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.suncoastsoftware.projectnotes.LoginActivity">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+    tools:context="com.suncoastsoftware.projectnotes.new_note">
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -23,21 +16,15 @@
                 android:layout_marginTop="0dp"
                 android:contentDescription="@string/login_top_img" />
 
-
-
         </FrameLayout>
-
 
         <ImageView
             android:id="@+id/imageView1"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
             android:contentDescription="@string/login_bottom_img"
             android:background="@color/offWhite"/>
 
-
-    </LinearLayout>
     <LinearLayout
         android:id="@+id/layout_input"
         android:orientation="vertical"
@@ -47,22 +34,30 @@
         android:padding="20dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
+        android:layout_marginTop="150dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp">
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:orientation="vertical"
+         android:padding="6dp">
 
-        <EditText
-            android:id="@+id/et_email"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/email_hint"
-            android:inputType="textEmailAddress" />
+         <Spinner
+             android:id="@+id/spinner_projects"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_margin="6dp"/>
 
-        <EditText
-            android:id="@+id/et_password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/password_hint"
-            android:inputType="textPassword" />
+         <EditText
+             android:id="@+id/et_newNote"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:hint="@string/newNote"
+             android:inputType="textMultiLine" />
+
+     </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -71,15 +66,15 @@
             android:layout_margin="6dp">
 
             <Button
-                android:id="@+id/btn_login"
-                android:text="@string/btn_login"
+                android:id="@+id/new_note_btn_addNote"
+                android:text="@string/addNote"
                 android:layout_marginRight="2dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
 
             <Button
-                android:id="@+id/btn_cancel"
+                android:id="@+id/new_note_btn_cancel"
                 android:text="@string/btn_cancel"
                 android:layout_marginLeft="2dp"
                 android:layout_width="match_parent"
@@ -88,4 +83,4 @@
         </LinearLayout>
     </LinearLayout>
 
-</RelativeLayout>
+</FrameLayout>

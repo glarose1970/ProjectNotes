@@ -7,4 +7,13 @@
     <string name="password_hint">Password</string>
     <string name="btn_login">Login</string>
     <string name="btn_cancel">Cancel</string>
+    <string name="title_activity_main">Project Notes</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_new_note">New Note</string>
+    <string name="newNote">New Note</string>
+    <string name="addNote">Add Note</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
