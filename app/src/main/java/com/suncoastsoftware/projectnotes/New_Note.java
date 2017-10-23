@@ -7,7 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class new_note extends Fragment {
+public class New_Note extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -19,13 +19,13 @@ public class new_note extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public new_note() {
+    public New_Note() {
         // Required empty public constructor
     }
 
     // TODO: Rename and change types and number of parameters
-    public static new_note newInstance(String param1, String param2) {
-        new_note fragment = new new_note();
+    public static New_Note newInstance(String param1, String param2) {
+        New_Note fragment = new New_Note();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);

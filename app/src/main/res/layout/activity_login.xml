@@ -23,8 +23,6 @@
                 android:layout_marginTop="0dp"
                 android:contentDescription="@string/login_top_img" />
 
-
-
         </FrameLayout>
 
 

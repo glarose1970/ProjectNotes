@@ -1,0 +1,109 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.suncoastsoftware.projectnotes.New_Project">
+
+    <FrameLayout
+        android:id="@+id/new_project_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="303dp"
+        android:background="@color/colorPrimaryDark">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="0dp"
+            android:contentDescription="@string/login_top_img" />
+
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:contentDescription="@string/login_bottom_img"
+        android:background="@color/offWhite"/>
+
+    <LinearLayout
+        android:id="@+id/layout_input"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccentDark"
+        android:padding="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="6dp">
+
+            <EditText
+                android:id="@+id/et_projectName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/projectNameHint"
+                android:layout_margin="4dp"/>
+
+            <EditText
+                android:id="@+id/et_projectDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/projectDescHint"
+                android:layout_margin="4dp"/>
+
+            <EditText
+                android:id="@+id/et_projectCreated"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/createdHint"
+                android:layout_margin="4dp"/>
+
+            <EditText
+            android:id="@+id/et_projectAuthor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/authorHint"
+            android:layout_margin="4dp"/>
+
+            <EditText
+                android:id="@+id/et_projectStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/projectStatusHint"
+                android:layout_margin="4dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:layout_margin="6dp">
+
+            <Button
+                android:id="@+id/new_project_btn_addProject"
+                android:text="@string/addProject"
+                android:layout_marginRight="2dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/new_note_btn_cancel"
+                android:text="@string/btn_cancel"
+                android:layout_marginLeft="2dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>
