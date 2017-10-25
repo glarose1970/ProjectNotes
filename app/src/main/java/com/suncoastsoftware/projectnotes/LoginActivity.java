@@ -35,7 +35,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         mAuth = FirebaseAuth.getInstance();
-        mAuth.signOut();
+      //  mAuth.signOut();
         btn_login   = (Button) findViewById(R.id.btn_login);
         btn_cancel  = (Button) findViewById(R.id.btn_cancel);
         et_email    = (EditText) findViewById(R.id.et_email) ;
@@ -58,13 +58,10 @@ public class LoginActivity extends AppCompatActivity {
                     //user is signed in
                     //navigate to the main content activity
                     Intent intent  = new Intent(LoginActivity.this, MainActivity.class);
-                    Bundle args = new Bundle();
-                    args.putString(user.getDisplayName(), user.getUid());
-                    intent.putExtras(args);
                     startActivity(intent);
 
                 }else {
-                    //code to log in user here
+
                 }
             }
         };

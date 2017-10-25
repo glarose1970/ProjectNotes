@@ -63,7 +63,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/createdHint"
-                android:layout_margin="4dp"/>
+                android:layout_margin="4dp"
+                android:focusable="false"/>
 
             <EditText
             android:id="@+id/et_projectAuthor"
@@ -72,12 +73,11 @@
             android:hint="@string/authorHint"
             android:layout_margin="4dp"/>
 
-            <EditText
-                android:id="@+id/et_projectStatus"
+            <Spinner
+                android:id="@+id/new_project_spinner_status"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/projectStatusHint"
-                android:layout_margin="4dp"/>
+                android:layout_height="wrap_content" />
+
 
         </LinearLayout>
 
