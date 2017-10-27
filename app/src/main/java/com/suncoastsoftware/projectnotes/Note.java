@@ -6,36 +6,47 @@ package com.suncoastsoftware.projectnotes;
 
 public class Note {
 
-    public int noteId;
-    public int projectId;
+    public String noteId;
+    public String projectId;
     public String task;
     public String created;
     public String noteStatus;
+    public String author;
+
 
     public Note() {
     }
 
-    public Note(int noteId, int projectId, String task, String created, String status) {
+    public Note(String noteId, String projectId, String task, String created, String noteStatus, String author) {
         this.noteId = noteId;
         this.projectId = projectId;
         this.task = task;
         this.created = created;
-        this.noteStatus = status;
+        this.noteStatus = noteStatus;
+        this.author = author;
     }
 
-    public int getNoteId() {
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public String getNoteId() {
         return noteId;
     }
 
-    public void setNoteId(int noteId) {
+    public void setNoteId(String noteId) {
         this.noteId = noteId;
     }
 
-    public int getProjectId() {
+    public String getProjectId() {
         return projectId;
     }
 
-    public void setProjectId(int projectId) {
+    public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
 

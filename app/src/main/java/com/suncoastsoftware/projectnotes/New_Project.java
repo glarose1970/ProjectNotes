@@ -80,7 +80,7 @@ public class New_Project extends Fragment {
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
         mDatabase = FirebaseDatabase.getInstance();
-        mRef = mDatabase.getReference("projects").child(mUser.getUid());
+        mRef = mDatabase.getReference("projects");
         statusList = new ArrayList<>();
         LoadStatus();
 
@@ -242,7 +242,7 @@ public class New_Project extends Fragment {
         int min = 000000;
         int max = 999999;
 
-        id = rand.nextInt((max - min) + max);
+        id = rand.nextInt((max + 1 - min) + min);
 
         return id;
 

@@ -3,6 +3,7 @@ package com.suncoastsoftware.projectnotes;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -20,10 +21,12 @@ public class MainActivity extends AppCompatActivity {
 
                     return true;
                 case R.id.navigation_dashboard:
-
+                    View_Notes viewNotes = new View_Notes();
+                    LoadFragment(viewNotes);
                     return true;
                 case R.id.navigation_newNote:
-
+                    New_Note newNotes = new New_Note();
+                    LoadFragment(newNotes);
                     return true;
             }
             return false;
@@ -36,18 +39,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-        LoadFragment();
+        New_Project newProject = new New_Project();
+        LoadFragment(newProject);
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
 
-    private void LoadFragment() {
+    private void LoadFragment(Fragment fragment) {
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        New_Project fragment = new New_Project();
+       // New_Project fragment = new New_Project();
         fragmentTransaction.add(R.id.content, fragment);
         fragmentTransaction.commit();
 

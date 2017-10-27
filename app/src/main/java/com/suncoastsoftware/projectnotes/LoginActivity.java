@@ -35,7 +35,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         mAuth = FirebaseAuth.getInstance();
-      //  mAuth.signOut();
+        //mAuth.signOut();
         btn_login   = (Button) findViewById(R.id.btn_login);
         btn_cancel  = (Button) findViewById(R.id.btn_cancel);
         et_email    = (EditText) findViewById(R.id.et_email) ;
