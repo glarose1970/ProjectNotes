@@ -17,10 +17,12 @@
     <string name="addNote">Add Note</string>
     <string name="projectNameHint">Project Name</string>
     <string name="projectDescHint">Description</string>
+    <string name="projectMessageHint">Message</string>
     <string name="createdHint">Created Date</string>
     <string name="addProject">Add Project</string>
     <string name="authorHint">Author</string>
     <string name="projectStatusHint">Status</string>
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

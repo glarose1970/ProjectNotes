@@ -44,6 +44,7 @@ public class View_Notes extends Fragment {
     private OnFragmentInteractionListener mListener;
     private FirebaseDatabaseHelper DBHelper;
     private List<Project> projectList;
+    List<Note> noteList;
 
     Spinner projectsSpinner;
 
@@ -73,6 +74,8 @@ public class View_Notes extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
 
+
+
         new LoadProjects().execute();
     }
 
@@ -82,6 +85,7 @@ public class View_Notes extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_view__notes, container, false);
         projectList = new ArrayList<>();
+        noteList = new ArrayList<>();
         projectsSpinner = (Spinner) view.findViewById(R.id.view_notes_spinner_projects);
         notesRecView    = (RecyclerView) view.findViewById(R.id.view_notes_recViewNotes);
         projectsSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -90,7 +94,37 @@ public class View_Notes extends Fragment {
                 if (parent.getSelectedItem().equals("Choose Project")) {
 
                 }else {
-                    new LoadNotes().execute(parent.getSelectedItem().toString());
+                    //new LoadNotes().execute(parent.getSelectedItem().toString());
+                    mRef.child("projects").addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            noteList.clear();
+                            Iterable<DataSnapshot>  data = dataSnapshot.getChildren();
+                            for (DataSnapshot child : data) {
+                                String name = child.child("projectName").getValue().toString();
+                                if (name.equals(projectsSpinner.getSelectedItem())) {
+                                    String id = child.child("projectId").getValue().toString();
+                                    Iterable<DataSnapshot> notesData = child.child("notes").getChildren();
+                                    for (DataSnapshot notes : notesData) {
+                                        Note note = notes.getValue(Note.class);
+                                        noteList.add(note);
+                                    }
+                                    //String test = "";
+                                }
+                            }
+                            //set the adapter for the Recyclerview here.
+                            viewNotesAdapter = new ViewNotesAdapterHelper(getContext(), noteList);
+                            RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getContext());
+                            notesRecView.setLayoutManager(mLayoutManager);
+                            notesRecView.setItemAnimator(new DefaultItemAnimator());
+                            notesRecView.setAdapter(viewNotesAdapter);
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+
+                        }
+                    });
                 }
             }
 
@@ -99,6 +133,7 @@ public class View_Notes extends Fragment {
 
             }
         });
+
 
         return view;
     }

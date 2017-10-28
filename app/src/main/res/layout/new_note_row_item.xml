@@ -16,7 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-       >
+        android:baselineAligned="false">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -29,7 +29,7 @@
                 android:id="@+id/new_note_row_projectName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="projectName"
+                android:text="Project Name"
                 android:layout_marginTop="4dp"
                 android:textSize="18sp"
                 />
@@ -38,7 +38,7 @@
                 android:id="@+id/new_note_row_projectMessage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Message"
+                android:text="@string/projectMessageHint"
                 android:layout_marginTop="4dp"/>
 
             <TextView
