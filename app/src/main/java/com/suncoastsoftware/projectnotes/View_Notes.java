@@ -4,6 +4,8 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -81,11 +83,15 @@ public class View_Notes extends Fragment {
         View view = inflater.inflate(R.layout.fragment_view__notes, container, false);
         projectList = new ArrayList<>();
         projectsSpinner = (Spinner) view.findViewById(R.id.view_notes_spinner_projects);
-
+        notesRecView    = (RecyclerView) view.findViewById(R.id.view_notes_recViewNotes);
         projectsSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if (parent.getSelectedItem().equals("Choose Project")) {
 
+                }else {
+                    new LoadNotes().execute(parent.getSelectedItem().toString());
+                }
             }
 
             @Override
@@ -174,15 +180,23 @@ public class View_Notes extends Fragment {
 
         List<Note> noteList = new ArrayList<>();
         @Override
-        protected Void doInBackground(String... params) {
+        protected Void doInBackground(final String... params) {
 
-            mRef.child(params[0]).addValueEventListener(new ValueEventListener() {
+            mRef.child("projects").addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     Iterable<DataSnapshot>  data = dataSnapshot.getChildren();
                     for (DataSnapshot child : data) {
-                        Note note = child.getValue(Note.class);
-                        noteList.add(note);
+                        String name = child.child("projectName").getValue().toString();
+                        if (name.equals(params[0])) {
+                            String id = child.child("projectId").getValue().toString();
+                            Iterable<DataSnapshot> notesData = child.child("notes").getChildren();
+                            for (DataSnapshot notes : notesData) {
+                                Note note = notes.getValue(Note.class);
+                                noteList.add(note);
+                            }
+                            //String test = "";
+                        }
                     }
                 }
 
@@ -199,6 +213,11 @@ public class View_Notes extends Fragment {
             super.onPostExecute(aVoid);
 
             //set the adapter for the Recyclerview here.
+            viewNotesAdapter = new ViewNotesAdapterHelper(getContext(), noteList);
+            RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getContext());
+            notesRecView.setLayoutManager(mLayoutManager);
+            notesRecView.setItemAnimator(new DefaultItemAnimator());
+            notesRecView.setAdapter(viewNotesAdapter);
         }
     }
 }

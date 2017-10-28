@@ -30,12 +30,12 @@
         android:id="@+id/layout_input"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="match_parent"
         android:background="@color/colorAccentDark"
         android:padding="2dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp">
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
 
 
             <Spinner
@@ -45,6 +45,7 @@
                 android:layout_margin="6dp"/>
 
             <android.support.v7.widget.RecyclerView
+                android:id="@+id/view_notes_recViewNotes"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="6dp"

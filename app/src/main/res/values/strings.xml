@@ -7,6 +7,8 @@
     <string name="password_hint">Password</string>
     <string name="btn_login">Login</string>
     <string name="btn_cancel">Cancel</string>
+    <string name="btn_edit">Edit</string>
+    <string name="btn_remove">Remove</string>
     <string name="title_activity_main">Project Notes</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>

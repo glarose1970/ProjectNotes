@@ -101,7 +101,7 @@ public class New_Note extends Fragment {
 
                 }else {
 
-                    projectName = spinnerStatus.getSelectedItem().toString();
+                  //  projectName = spinnerStatus.getSelectedItem().toString();
                     // new SaveNote().execute(spinnerProject.getSelectedItem().toString());
                 }
             }
@@ -202,7 +202,7 @@ public class New_Note extends Fragment {
                         if (name.equals(params[0])) {
                             String id = child.child("projectId").getValue().toString();
                             String noteID = et_noteId.getText().toString();
-                            note = new Note(noteID, id, et_noteMessage.getText().toString(), et_created.getText().toString(),
+                            note = new Note(noteID, id, name, et_noteMessage.getText().toString(), et_created.getText().toString(),
                                     spinnerStatus.getSelectedItem().toString(), et_author.getText().toString());
                             mRef.child("projects").child(id).child("notes").child(noteID).setValue(note);
                         }
@@ -216,8 +216,6 @@ public class New_Note extends Fragment {
             });
             return null;
         }
-
-
     }
 
     class LoadProjects extends AsyncTask<Void, Void, Void> {

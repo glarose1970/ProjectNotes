@@ -8,6 +8,7 @@ public class Note {
 
     public String noteId;
     public String projectId;
+    public String projectName;
     public String task;
     public String created;
     public String noteStatus;
@@ -17,13 +18,22 @@ public class Note {
     public Note() {
     }
 
-    public Note(String noteId, String projectId, String task, String created, String noteStatus, String author) {
+    public Note(String noteId, String projectId, String projectName, String task, String created, String noteStatus, String author) {
         this.noteId = noteId;
         this.projectId = projectId;
+        this.projectName = projectName;
         this.task = task;
         this.created = created;
         this.noteStatus = noteStatus;
         this.author = author;
+    }
+
+    public String getProjectName() {
+        return projectName;
+    }
+
+    public void setProjectName(String projectName) {
+        this.projectName = projectName;
     }
 
     public String getAuthor() {
