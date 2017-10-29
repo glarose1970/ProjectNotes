@@ -91,7 +91,7 @@ public class New_Note extends Fragment {
         projectList    = new ArrayList<>();
 
         et_noteId.setText("11-" + GenerateID());
-        String[] statusValues = new String[] {"Choose Status", "Active", "Complete", "On Hold"};
+        String[] statusValues = new String[] {"Choose Status", "New", "Active", "Complete", "On Hold"};
         ArrayAdapter adapter = new ArrayAdapter(getContext(), android.R.layout.simple_spinner_item, statusValues);
         spinnerStatus.setAdapter(adapter);
         spinnerStatus.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {

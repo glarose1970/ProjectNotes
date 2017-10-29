@@ -18,16 +18,16 @@ public class MainActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-
-                    return true;
+                  LoadFragment(new View_Projects());
+                   break;
                 case R.id.navigation_dashboard:
                     View_Notes viewNotes = new View_Notes();
                     LoadFragment(viewNotes);
-                    return true;
+                    break;
                 case R.id.navigation_newNote:
                     New_Note newNotes = new New_Note();
                     LoadFragment(newNotes);
-                    return true;
+                    break;
             }
             return false;
         }
@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
        // New_Project fragment = new New_Project();
-        fragmentTransaction.add(R.id.content, fragment);
+        fragmentTransaction.replace(R.id.content, fragment);
         fragmentTransaction.commit();
 
     }

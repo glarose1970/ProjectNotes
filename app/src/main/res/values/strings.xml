@@ -22,6 +22,7 @@
     <string name="addProject">Add Project</string>
     <string name="authorHint">Author</string>
     <string name="projectStatusHint">Status</string>
+    <string name="noteCountHint">Note Count</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->
