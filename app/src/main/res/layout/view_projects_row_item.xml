@@ -49,6 +49,14 @@
                 android:layout_margin="4dp"
                 android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"/>
+            <TextView
+                android:id="@+id/view_projects_tv_projectNoteCount"
+                android:hint="@string/noteCountHint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"/>
 
         </LinearLayout>
 

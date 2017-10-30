@@ -1,5 +1,7 @@
 package com.suncoastsoftware.projectnotes;
 
+import android.util.Log;
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -17,11 +19,14 @@ import java.util.List;
 
 public class FirebaseDatabaseHelper {
 
-    FirebaseDatabase mData = FirebaseDatabase.getInstance();
-    FirebaseAuth mAuth = FirebaseAuth.getInstance();
-    DatabaseReference mRef = mData.getReference();
+    static FirebaseDatabase mData = FirebaseDatabase.getInstance();
+    static FirebaseAuth mAuth = FirebaseAuth.getInstance();
+    static DatabaseReference mRef = mData.getReference();
     FirebaseUser mUser = mAuth.getCurrentUser();
 
+    int count = 0;
+    static String firstChild;
+    String nCount;
     //Project project;
 
     public FirebaseDatabaseHelper() {
@@ -46,6 +51,29 @@ public class FirebaseDatabaseHelper {
             }
         });
         return projectNameList;
+    }
+
+    public static String getNoteCount(String projectId) {
+
+        try {
+            mRef.child("projects").child(projectId).child("notes").addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    long notes = dataSnapshot.getChildrenCount();
+                    firstChild = String.valueOf(notes);
+                    Log.d("FirebaseHelper :", "Note Count : " + firstChild);
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+
+                }
+            });
+        }catch (Exception e) {
+            Log.d("FirebaseHelper :", "Error : " + e.getMessage());
+        }
+
+        return firstChild;
     }
 
 }

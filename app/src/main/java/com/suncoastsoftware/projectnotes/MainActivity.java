@@ -20,6 +20,9 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.navigation_home:
                   LoadFragment(new View_Projects());
                    break;
+                case R.id.navigation_new_project:
+                    LoadFragment(new New_Project());
+                    break;
                 case R.id.navigation_dashboard:
                     View_Notes viewNotes = new View_Notes();
                     LoadFragment(viewNotes);
