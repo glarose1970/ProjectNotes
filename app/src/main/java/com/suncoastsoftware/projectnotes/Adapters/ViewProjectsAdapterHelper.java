@@ -55,7 +55,7 @@ public class ViewProjectsAdapterHelper extends RecyclerView.Adapter<ViewProjects
            public void onDataChange(DataSnapshot dataSnapshot) {
                long mCount = dataSnapshot.getChildrenCount();
                thisCount = String.valueOf(mCount);
-               holder.tv_noteCount.setText(thisCount);
+               holder.tv_noteCount.setText("Note Count - [" + thisCount + "]");
            }
 
            @Override

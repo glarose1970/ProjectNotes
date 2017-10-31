@@ -9,7 +9,7 @@
     <item
         android:id="@+id/navigation_new_project"
         android:icon="@drawable/ic_new_project"
-        android:title="New Project"/>
+        android:title="@string/newProject"/>
 
     <item
         android:id="@+id/navigation_dashboard"

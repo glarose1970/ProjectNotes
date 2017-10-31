@@ -18,6 +18,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -130,6 +131,13 @@ public class New_Project extends Fragment {
             }
         });
 
+        btn_cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Clear_Input();
+            }
+        });
+
         txt_createdDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -164,7 +172,7 @@ public class New_Project extends Fragment {
             Clear_Input();
             statusSpinner.setSelection(0);
         }else {
-            //Toast.makeText(getContext(), "fields required", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), "fields required", Toast.LENGTH_SHORT).show();
         }
     }
 
